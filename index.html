@@ -16,8 +16,8 @@
     <button onclick="adicionar()" id="adicionar">Adicionar Livro</button>
     <button onclick="mostrarLivros()">Mostrar</button>
     <p id="resultado"></p>
-    <p>Total de livros cadastrados<span id="numero">0</span></p>
-    <p id="mensagem">cadastre um livro</p>
+    <!-- <p>Total de livros cadastrados<span id="numero">0</span></p>
+    <p id="mensagem">cadastre um livro</p> -->
     <div class="carrossel">
         <img id="carrosselImagem" src="" alt="">
         <div>
@@ -89,24 +89,24 @@
 
         }
 
-        const cadatrartBtn = document.getElementById('adicionar');
-        const livrosCadastrados = document.getElementById('numero')
-        const mensagem = document.getElementById('mensagem')
-        const contador = document.getElementById('numero')
+        // const cadatrartBtn = document.getElementById('adicionar');
+        // const livrosCadastrados = document.getElementById('numero')
+        // const mensagem = document.getElementById('mensagem')
+        // const contador = document.getElementById('numero')
 
-        let contadorLivros = 0;
+        // let contadorLivros = 0;
 
-        cadatrartBtn.addEventListener('click', () => {
-            contadorLivros++;
-            contador.textContent = contadorLivros;
+        // cadatrartBtn.addEventListener('click', () => {
+        //     contadorLivros++;
+        //     contador.textContent = contadorLivros;
 
-            if (contadorLivros === 1) {
-                mensagem.style.display = 'none'
-                livrosCadastrados.style.display = 'block'
-            }
-        });
+        //     if (contadorLivros === 1) {
+        //         mensagem.style.display = 'none'
+        //         livrosCadastrados.style.display = 'block'
+        //     }
+        // });
 
-        cadatrartBtn.addEventListener('click', atualizarContador);
+        // cadatrartBtn.addEventListener('click', atualizarContador);
 
 
 
