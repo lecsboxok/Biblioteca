@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carrossel {
+    text-align: center;
+}
+
+
+#carrosselImagem {
+    width: 350px;
+    text-align: center;
+}
+
+button {
+    background-color: rgb(66, 210, 30);
+    padding: 10px;
+}
+
