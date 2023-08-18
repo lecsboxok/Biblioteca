@@ -11,7 +11,7 @@
 
 
 #carrosselImagem {
-    width: 350px;
+    height: 450px;
     text-align: center;
 }
 
@@ -20,3 +20,29 @@ button {
     padding: 10px;
 }
 
+.parte1 {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.contar {
+    display: flex;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background-color: aquamarine;
+}
+
+.planilha {
+    display: flex;
+}
+
+.resultado {
+    width: 450px;
+}

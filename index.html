@@ -6,111 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/c93f4c944c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>Cadastro de livros</h1>
-    <input id="nomeLivro" placeholder="nome" type="text">
-    <input id="autorLivro" placeholder="Autor" type="text">
-    <input id="anoLivro" placeholder="Ano" type="text">
-    <button onclick="adicionar()" id="adicionar">Adicionar Livro</button>
-    <button onclick="mostrarLivros()">Mostrar</button>
-    <p id="resultado"></p>
-    <!-- <p>Total de livros cadastrados<span id="numero">0</span></p>
-    <p id="mensagem">cadastre um livro</p> -->
-    <div class="carrossel">
-        <img id="carrosselImagem" src="" alt="">
-        <div>
-            <button id="anterior">Anterior</button>
-            <button id="proximo">Próximo</button>
+    <header id="header">
+        <div class="container">
+            <nav class="menu">
+                <div class="logo">
+                    <h1>BIBLIOTECA</h1>
+                </div>
+                <div class="contar">
+                    <a>
+                        <i class="fa-solid fa-book"></i>
+                    </a>
+                    <p>:<span id="numero">0</span></p>
+                </div>
+            </nav>
         </div>
+    </header>
+    <main id="main">
+        <section class="section">
+            <div class="container">
+                <div class="parte1">
+                    <div class="cadastro">
+                        <h1>Cadastro de livros</h1>
+                        <input id="nomeLivro" placeholder="nome" type="text">
+                        <input id="autorLivro" placeholder="Autor" type="text">
+                        <input id="anoLivro" placeholder="Ano" type="text">
+                        <div class="cadastroBtn">
+                            <button onclick="adicionar()" id="adiciona">Adicionar Livro</button>
+                            <button onclick="mostrarLivros()">Mostrar</button>
+                        </div>
 
-    </div>
+                    </div>
+                    <div class="carrossel">
+                        <img id="carrosselImagem" src="" alt="">
+                        <div class="botoes">
+                            <button id="anterior">Anterior</button>
+                            <button id="proximo">Próximo</button>
+                        </div>
+                
+                    </div>    
+                </div>
 
-    <script>
-
-        let biblioteca = [];
-
-
-        function cadastro(nome, autor, ano) {
-            var livro = {
-                titulo: nome,
-                autor: autor,
-                ano: ano
-            };
-            biblioteca.push(livro)
-        }
-        function adicionar() {
-            let nome = document.getElementById('nomeLivro').value;
-            let autor = document.getElementById('autorLivro').value;
-            let ano = document.getElementById('anoLivro').value;
-            cadastro(nome, autor, ano);
-
-
-        }
-        function mostrarLivros() {
-            // console.log(`resultado:${biblioteca[1].cadastro}`)
-            // let resultado = (`${biblioteca[0, 1].autor}`)
-            let resultado = "";
-            for (let i = 0; i < biblioteca.length; i++) {
-                resultado += biblioteca[i].autor + "<br>";
-            }
-
-            document.getElementById("resultado").innerHTML = resultado;
-
-            let imgIndice = 0;
-            const IMAGENS = ['poster1.jpg', 'poster2.jpg', 'poster3.jpg', 'poster4.jpg'];
-            const prevButton = document.getElementById('anterior');
-            const nextButton = document.getElementById('proximo');
-
-            var IMG = document.getElementById('carrosselImagem');
-
-            function carregar() {
-                IMG.src = IMAGENS[imgIndice];
-            }
-
-            prevButton.addEventListener('click', () => {
-                if (imgIndice > 0) {
-                    --imgIndice
-                    // imgIndice = imgIndice - 1;
-                    carregar();
-                }
-            });
-
-            nextButton.addEventListener('click', () => {
-                var limite = (IMAGENS.length) - 1
-                if (imgIndice < limite) {
-                    ++imgIndice
-                    // imgIndice = imgIndice + 1;
-                    carregar();
-                }
-            })
-            carregar();
-
-        }
-
-        // const cadatrartBtn = document.getElementById('adicionar');
-        // const livrosCadastrados = document.getElementById('numero')
-        // const mensagem = document.getElementById('mensagem')
-        // const contador = document.getElementById('numero')
-
-        // let contadorLivros = 0;
-
-        // cadatrartBtn.addEventListener('click', () => {
-        //     contadorLivros++;
-        //     contador.textContent = contadorLivros;
-
-        //     if (contadorLivros === 1) {
-        //         mensagem.style.display = 'none'
-        //         livrosCadastrados.style.display = 'block'
-        //     }
-        // });
-
-        // cadatrartBtn.addEventListener('click', atualizarContador);
+                <p id="mensagem">Nenhum livro cadastrado</p>
+    
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="tabela">
+                    <div class="excluir">
+                        <button>Delete</button>
+                    </div>
+                    <div class="planilha">
+                        <p id="resultado" class="resultado"></p>
+                        <p id="resultado2" class="resultado"></p>
+                        <p id="resultado3" class="resultado"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
+    </main>
 
-    </script>
+
 </body>
 
 </html>
