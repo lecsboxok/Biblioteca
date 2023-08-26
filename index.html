@@ -32,10 +32,14 @@
             <div class="container">
                 <div class="parte1">
                     <div class="cadastro">
-                        <h1>Cadastro de livros</h1>
-                        <input id="nomeLivro" placeholder="nome" type="text">
-                        <input id="autorLivro" placeholder="Autor" type="text">
-                        <input id="anoLivro" placeholder="Ano" type="text">
+                        <div class="titulo">
+                            <h1>Cadastro de livros</h1>
+                        </div>
+                        <div class="textoCadastro">
+                            <input id="nomeLivro" placeholder="nome" type="text">
+                            <input id="autorLivro" placeholder="Autor" type="text">
+                            <input id="anoLivro" placeholder="Ano" type="text">
+                        </div>
                         <div class="cadastroBtn">
                             <button onclick="adicionar()" id="adiciona">Adicionar Livro</button>
                             <button onclick="mostrarLivros()">Mostrar</button>
@@ -63,9 +67,16 @@
                         <button onclick="excluir()">Delete</button>
                     </div>
                     <div class="planilha">
-                        <p id="resultado" class="resultado"></p>
-                        <p id="resultado2" class="resultado"></p>
-                        <p id="resultado3" class="resultado"></p>
+                        <div class="coluna">
+                            <p id="resultado" class="resultado"></p>
+                        </div>
+                        <div class="coluna">
+                            <p id="resultado2" class="resultado"></p>
+                        </div>
+                        <div class="coluna">
+                            <p id="resultado3" class="resultado"></p>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

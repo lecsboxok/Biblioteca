@@ -15,10 +15,10 @@ function adicionar() {
     let ano = document.getElementById('anoLivro').value;
     cadastro(nome, autor, ano);
     
-    const livrosCadastrados = document.getElementById('numero');
-    
-
+    let numeroLivro = biblioteca.length
+    document.getElementById("numero").textContent = numeroLivro
 }
+
 function mostrarLivros() {
     // console.log(`resultado:${biblioteca[1].cadastro}`)
     // let resultado = (`${biblioteca[0, 1].autor}`)
@@ -47,6 +47,11 @@ function mostrarLivros() {
 
     var IMG = document.getElementById('carrosselImagem');
 
+    let aparece = document.querySelector('.carrossel');
+
+    aparece.style.display = "block";
+
+
     function carregar() {
         IMG.src = IMAGENS[imgIndice];
     }
@@ -68,28 +73,45 @@ function mostrarLivros() {
         }
     })
     carregar();
+}
 
+function excluir() {
+    
+    let resultado = "";
+    let resultado2 = "";
+    let resultado3 = "";
+    let sumir = biblioteca.length
+    let aparece = document.querySelector('.carrossel');
+    sumir = 0;
+    aparece = 0;
+
+    document.getElementById("numero").innerHTML = sumir;
+    document.getElementById("resultado").innerHTML = resultado;
+    document.getElementById("resultado2").innerHTML = resultado2;
+    document.getElementById("resultado3").innerHTML = resultado3;
 
 }
 
 
-const cadatrartBtn = document.getElementById('adiciona');
-const livrosCadastrados = document.getElementById('numero');
-const mensagem = document.getElementById('mensagem');
-const contador = document.getElementById('numero');
 
-let contadorLivros = 0;
 
-cadatrartBtn.addEventListener('click', () => {
-    contadorLivros++;
-    contador.textContent = contadorLivros;
+// const cadatrartBtn = document.getElementById('adiciona');
+// const livrosCadastrados = document.getElementById('numero');
+// const mensagem = document.getElementById('mensagem');
+// const contador = document.getElementById('numero');
 
-    if (contadorLivros === 1) {
-        mensagem.style.display = 'none'
-        livrosCadastrados.style.display = 'block'
-    }
-});
+// let contadorLivros = 0;
 
-cadatrartBtn.addEventListener('click', atualizarContador);
+// cadatrartBtn.addEventListener('click', () => {
+//     contadorLivros++;
+//     contador.textContent = contadorLivros;
+
+//     if (contadorLivros === 1) {
+//         mensagem.style.display = 'none'
+//         contador.style.display = 'block'
+//     }
+// });
+
+// cadatrartBtn.addEventListener('click', atualizarContador);
 
 
