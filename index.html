@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/c93f4c944c.js" crossorigin="anonymous"></script>
 </head>
 
@@ -18,33 +17,33 @@
                     <h1>BIBLIOTECA</h1>
                 </div>
                 <div class="contar">
-                    <a>
-                        <i class="fa-solid fa-book"></i>
-                    </a>
-                    <p>:<span id="numero">0</span></p>
+                    <a><i class="fa-solid fa-book"></i></a>
+                    <h3>:<span id="numero">0</span></h3>
                 </div>
             </nav>
         </div>
     </header>
-    <div class="linha"></div>
     <main id="main">
         <section class="section">
             <div class="container">
-                <div class="parte1">
+                <div class="principal">
                     <div class="cadastro">
-                        <div class="titulo">
-                            <h1>Cadastro de livros</h1>
-                        </div>
-                        <div class="textoCadastro">
+                        <h1>Cadastro de livros</h1>
+                        <div class="info">
                             <input id="nomeLivro" placeholder="nome" type="text">
                             <input id="autorLivro" placeholder="Autor" type="text">
-                            <input id="anoLivro" placeholder="Ano" type="text">
+                            <input id="anoLivro" placeholder="Ano" type="number">
                         </div>
                         <div class="cadastroBtn">
-                            <button onclick="adicionar()" id="adiciona">Adicionar Livro</button>
-                            <button onclick="mostrarLivros()">Mostrar</button>
+                            <div class="btn">
+                                <button onclick="adicionar()" id="adiciona" class="btnCadastro">Adicionar Livro</button>
+                                <button onclick="mostrarLivros()" class="btnCadastro">Mostrar</button>
+                            </div>
+
+                            <div class="excluir">
+                                <button onclick="deletar()" id="delete">Excluir</button>
+                            </div>
                         </div>
-                        <p id="mensagem">Nenhum livro cadastrado</p>
                     </div>
                     <div class="carrossel">
                         <img id="carrosselImagem" src="" alt="">
@@ -52,31 +51,18 @@
                             <button id="anterior">Anterior</button>
                             <button id="proximo">Próximo</button>
                         </div>
-                
-                    </div>    
+
+                    </div>
                 </div>
 
-
-    
             </div>
         </section>
         <section class="section">
             <div class="container">
                 <div class="tabela">
-                    <div class="excluir">
-                        <button onclick="excluir()">Delete</button>
-                    </div>
+
                     <div class="planilha">
-                        <div class="coluna">
-                            <p id="resultado" class="resultado"></p>
-                        </div>
-                        <div class="coluna">
-                            <p id="resultado2" class="resultado"></p>
-                        </div>
-                        <div class="coluna">
-                            <p id="resultado3" class="resultado"></p>
-                        </div>
-                        
+                        <p id="resultado" class="resultado"></p>
                     </div>
                 </div>
             </div>
@@ -85,7 +71,7 @@
 
     </main>
 
-
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,7 @@
 let biblioteca = [];
-
+let carregandoImg = [];
+let imgIndice = 0;
+const IMAGENS = ['poster1.jpg', 'poster2.jpg', 'poster3.jpg', 'poster4.jpg'];
 
 function cadastro(nome, autor, ano) {
     var livro = {
@@ -7,111 +9,68 @@ function cadastro(nome, autor, ano) {
         autor: autor,
         ano: ano
     };
-    biblioteca.push(livro)
+    biblioteca.push(livro);
+
+    if (biblioteca.length <= IMAGENS.length) {
+        carregandoImg.push(IMAGENS[biblioteca.length - 1]);
+        imgIndice = biblioteca.length - 1;
+        carregar();
+    }
+
+    document.querySelector('.carrossel').style.display = 'block';
 }
+
 function adicionar() {
     let nome = document.getElementById('nomeLivro').value;
     let autor = document.getElementById('autorLivro').value;
     let ano = document.getElementById('anoLivro').value;
     cadastro(nome, autor, ano);
-    
-    let numeroLivro = biblioteca.length
-    document.getElementById("numero").textContent = numeroLivro
 }
 
 function mostrarLivros() {
     // console.log(`resultado:${biblioteca[1].cadastro}`)
     // let resultado = (`${biblioteca[0, 1].autor}`)
     let resultado = "";
-    let resultado2 = "";
-    let resultado3 = "";
 
     for (let i = 0; i < biblioteca.length; i++) {
 
-        resultado += biblioteca[i].titulo + "<br>";
-        resultado2 += biblioteca[i].autor + "<br>";
-        resultado3 += biblioteca[i].ano + "<br>";
+        resultado += (`${biblioteca[i].titulo} - ${biblioteca[i].autor} - ${biblioteca[i].ano}`);
 
     }
-
     document.getElementById("resultado").innerHTML = resultado;
-    document.getElementById("resultado2").innerHTML = resultado2;
-    document.getElementById("resultado3").innerHTML = resultado3;
+}
 
-//CARROSSEL--------------------------------------------
+function deletar() {
+    biblioteca.length = ''
+    carregandoImg = ''
+    document.querySelector('.carrossel').style.display = 'none';
+    resultado = ''
+}
 
-    let imgIndice = 0;
-    const IMAGENS = ['poster1.jpg', 'poster2.jpg', 'poster3.jpg', 'poster4.jpg'];
-    const prevButton = document.getElementById('anterior');
-    const nextButton = document.getElementById('proximo');
+const prevButton = document.getElementById('anterior');
+const nextButton = document.getElementById('proximo');
 
-    var IMG = document.getElementById('carrosselImagem');
+var IMG = document.getElementById('carrosselImagem');
 
-    let aparece = document.querySelector('.carrossel');
+function carregar() {
+    IMG.src = carregandoImg[imgIndice];
+}
 
-    aparece.style.display = "block";
-
-
-    function carregar() {
-        IMG.src = IMAGENS[imgIndice];
+prevButton.addEventListener('click', () => {
+    if (imgIndice === 0) {
+        imgIndice = carregandoImg.length - 1;
+    } else {
+        --imgIndice;
     }
-
-    prevButton.addEventListener('click', () => {
-        if (imgIndice > 0) {
-            --imgIndice
-            // imgIndice = imgIndice - 1;
-            carregar();
-        }
-    });
-
-    nextButton.addEventListener('click', () => {
-        var limite = (IMAGENS.length) - 1
-        if (imgIndice < limite) {
-            ++imgIndice
-            // imgIndice = imgIndice + 1;
-            carregar();
-        }
-    })
     carregar();
-}
+});
 
-function excluir() {
-    
-    let resultado = "";
-    let resultado2 = "";
-    let resultado3 = "";
-    let sumir = biblioteca.length
-    let aparece = document.querySelector('.carrossel');
-    sumir = 0;
-    aparece = 0;
-
-    document.getElementById("numero").innerHTML = sumir;
-    document.getElementById("resultado").innerHTML = resultado;
-    document.getElementById("resultado2").innerHTML = resultado2;
-    document.getElementById("resultado3").innerHTML = resultado3;
-
-}
-
-
-
-
-// const cadatrartBtn = document.getElementById('adiciona');
-// const livrosCadastrados = document.getElementById('numero');
-// const mensagem = document.getElementById('mensagem');
-// const contador = document.getElementById('numero');
-
-// let contadorLivros = 0;
-
-// cadatrartBtn.addEventListener('click', () => {
-//     contadorLivros++;
-//     contador.textContent = contadorLivros;
-
-//     if (contadorLivros === 1) {
-//         mensagem.style.display = 'none'
-//         contador.style.display = 'block'
-//     }
-// });
-
-// cadatrartBtn.addEventListener('click', atualizarContador);
-
-
+nextButton.addEventListener('click', () => {
+    if (imgIndice === carregandoImg.length - 1) {
+        imgIndice = 0;
+        // imgIndice = imgIndice + 1;
+    } else {
+        ++imgIndice;
+    }
+    carregar();
+});

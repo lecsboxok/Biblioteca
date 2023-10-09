@@ -5,91 +5,71 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #FEFDFB;
-    font: 400 20px 'Unbounded';
-}
-
-@font-face {
-    font-family: 'Unbounded';
-    src: url(fonts/Unbounded-VariableFont_wght.ttf);
-}
-
-.container {
-    margin: 0 100px;
-}
-
-.linha {
-    border-top: 0.5px solid;
-    margin: 0 60px;
-}
-
-.menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px;
-}
-
-.parte1 {
-    display: flex;
-    justify-content: space-between;
-    height: 80vh;
-    align-items: center;
-}
-
-
-
-input {
-    border: 1px solid #0D0D0D;
-    padding: 10px;
-    border-radius: 50px;
-}
-
-.textoCadastro {
-    margin: 20px 0;
-}
-
-.cadastroBtn{
-    margin-bottom: 10px;
-}
-
-.carrossel {
-    display: none;
-    text-align: center;
-}
-
-
-#carrosselImagem {
-    height: 450px;
-    text-align: center;
-}
-
-button {
-    background-color: #0D0D0D;
-    padding: 10px;
-    color: #FEFDFB;
-    border-radius: 50px;
-}
-
-.tabela {
+.info {
     display: flex;
     flex-direction: column;
 }
 
+input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid black;
+}
+
+#autorLivro, h1, .cadastroBtn {
+    margin: 10px 0;
+}
+
 .excluir {
+    margin-top: 5px;
+}
+
+.btnCadastro {
+    width: 148px;
+}
+
+#delete {
+    width: 300px;
+}
+
+.principal {
     display: flex;
-    justify-content: end;
+    margin: 0 50px;
+    height: 450px;
+}
+
+.cadastro {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrossel {
+    text-align: center;
+    width: 50%;
+    display: none;
+}
+
+#carrosselImagem {
+    height: 400px;
+    text-align: center;
+}
+
+button {
+    background-color: rgb(66, 210, 30);
+    padding: 10px;
+    cursor: pointer;
 }
 
 .contar {
     display: flex;
 }
 
-.planilha {
+.menu {
     display: flex;
-}
-
-.resultado {
-    width: 300px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
