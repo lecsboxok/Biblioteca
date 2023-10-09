@@ -11,12 +11,12 @@ function cadastro(nome, autor, ano) {
     };
     biblioteca.push(livro);
 
-    if (imgIndice < IMAGENS.length) {
-        carregandoImg.push(IMAGENS[imgIndice]);
+    if (biblioteca.length <= IMAGENS.length) {
+        carregandoImg.push(IMAGENS[biblioteca.length - 1]);
+        imgIndice = biblioteca.length - 1;
+        carregar();
     }
 
-    imgIndice = biblioteca.length - 1;
-    carregar();
     document.querySelector('.carrossel').style.display = 'block';
 }
 
