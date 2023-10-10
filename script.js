@@ -1,7 +1,7 @@
 let biblioteca = [];
 let carregandoImg = [];
 let imgIndice = 0; // Inicializado como -1
-const IMAGENS = ['poster1.jpg', 'poster2.jpg', 'poster3.jpg', 'poster4.jpg'];
+const IMAGENS = ['IMG/livro1.jpg', 'IMG/livro2.jpg', 'IMG/livro3.jpg', 'IMG/livro4.jpg'];
 
 function cadastro(nome, autor, ano) {
     var livro = {
@@ -15,6 +15,7 @@ function cadastro(nome, autor, ano) {
         carregandoImg.push(IMAGENS[biblioteca.length - 1]);
         imgIndice = biblioteca.length - 1;
         carregar();
+        atualizarLivro();
     }
 
     document.querySelector('.carrossel').style.display = 'block';
@@ -31,9 +32,14 @@ function mostrarLivros() {
     let resultado = "";
 
     for (let i = 0; i < biblioteca.length; i++) {
-        resultado += `${biblioteca[i].titulo} - ${biblioteca[i].autor} - ${biblioteca[i].ano}<br>`;
+        resultado += `Título: ${biblioteca[i].titulo} - Autor: ${biblioteca[i].autor} - Ano: ${biblioteca[i].ano}<br>`;
     }
     document.getElementById("resultado").innerHTML = resultado;
+}
+
+function atualizarLivro() {
+    let quantidade = biblioteca.length
+    document.getElementById('numero').textContent = quantidade;
 }
 
 function deletar() {
@@ -45,7 +51,6 @@ function deletar() {
 
 const prevButton = document.getElementById('anterior');
 const nextButton = document.getElementById('proximo');
-
 var IMG = document.getElementById('carrosselImagem');
 
 function carregar() {
