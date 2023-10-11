@@ -15,9 +15,8 @@ function cadastro(nome, autor, ano) {
         carregandoImg.push(IMAGENS[biblioteca.length - 1]);
         imgIndice = biblioteca.length - 1;
         carregar();
-        atualizarLivro();
     }
-
+    atualizarLivro();
     document.querySelector('.carrossel').style.display = 'block';
 }
 
@@ -37,16 +36,17 @@ function mostrarLivros() {
     document.getElementById("resultado").innerHTML = resultado;
 }
 
-function atualizarLivro() {
-    let quantidade = biblioteca.length
-    document.getElementById('numero').textContent = quantidade;
-}
-
 function deletar() {
     biblioteca.length = 0;
     carregandoImg.length = 0;
     document.querySelector('.carrossel').style.display = 'none';
     document.getElementById("resultado").innerHTML = ""; // Limpe o resultado na tela
+    atualizarLivro()
+}
+
+
+function atualizarLivro() {
+    document.getElementById('numero').textContent = biblioteca.length;
 }
 
 const prevButton = document.getElementById('anterior');
